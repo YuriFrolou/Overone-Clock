@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             minutes = 0;
             hours += 6;
         }
+        if (minutes === 360) {
+            minutes = 0;
+        }
         seconds += 6;
         second.style.transform = `rotate(${seconds}deg)`;
         minute.style.transform = `rotate(${minutes}deg)`;
