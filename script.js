@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             seconds = 0;
             minutes += 6;
         }
-        if (minutes === 360) {
+        if (minutes === 72) {
             minutes = 0;
             hours += 6;
         }
