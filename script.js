@@ -6,19 +6,17 @@ const second = document.querySelector('.second');
 
 document.addEventListener('DOMContentLoaded', () => {
     const date = new Date();
-
-    title.innerHTML = `${formatDate(date)}`;
-    description.innerHTML = `${date.toLocaleString()}`;
     console.log(date.toISOString());
 
     let seconds = date.getSeconds() * 6;
     let minutes = date.getMinutes() * 6;
     let hours = date.getHours() >= 12 ? (date.getHours() - 12) * 30 + (Math.round(date.getMinutes() / 12)) * 6 : date.getHours() * 30 + (Math.round(date.getMinutes() / 12)) * 6;
-    console.log(date.getHours())
-    console.log(hours)
-    console.log(date.getMinutes())
+   
 
     setInterval(() => {
+
+        title.innerHTML = `${formatDate(new Date())}`;
+        description.innerHTML = `${new Date().toLocaleString()}`;
 
         if (new Date().getHours() === 0) {
             hours = 0;
