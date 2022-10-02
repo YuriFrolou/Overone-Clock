@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let seconds = date.getSeconds() * 6;
     let minutes = date.getMinutes() * 6;
     let hours = date.getHours() >= 12 ? (date.getHours() - 12) * 30 + (Math.round(date.getMinutes() / 12)) * 6 : date.getHours() * 30 + (Math.round(date.getMinutes() / 12)) * 6;
-   
+
 
     setInterval(() => {
 
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
             seconds = 0;
             minutes += 6;
         }
-        if (minutes === 72) {
-            minutes = 0;
+        if (minutes === 72 || minutes === 144 || minutes === 216 || minutes === 288) {
             hours += 6;
         }
         if (minutes === 360) {
             minutes = 0;
+            hours += 6;
         }
         seconds += 6;
         second.style.transform = `rotate(${seconds}deg)`;
